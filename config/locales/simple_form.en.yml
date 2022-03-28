@@ -1,5 +1,6 @@
 en:
   simple_form:
+
     "yes": 'Yes'
     "no": 'No'
     required:
@@ -16,11 +17,11 @@ en:
     labels:
       quote:
         name: Name
- helpers:
-  submit:
-    quote:
-      create: Create quote
-      update: Update quote
+  helpers:
+    submit:
+      quote:
+        create: Create quote
+        update: Update quote
     # Examples
     # labels:
     #   defaults:
