@@ -1,6 +1,6 @@
 <%= simple_form_for quote, html: { class: 'quote form' } do |f| %>
   <% if quote.errors.any? %>
-    <div class="errr-message">
+    <div class="error-message">
       <%= quote.errors.full_messages.to_setence.capitalize %>
     </div>
   <% end %>
