@@ -1,3 +1,5 @@
+<%# Add new quote %>
 <%= turbo_stream.prepend "quotes", @quote %>
 
+<%# Remove/close form by replacing it with an empty frame %>
 <%= turbo_stream.update Quote.new, "" %>
