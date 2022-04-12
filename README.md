@@ -8,6 +8,7 @@
 - Bundler
 - Ruby on Rails
 - PostgreSQL
+- Redis
 
 ## Install
 
