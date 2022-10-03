@@ -17,3 +17,8 @@ $ bin/setup
 $ bin/dev
 
 http://localhost:3000
+
+
+## Tests
+
+$ bin/rails test:all
