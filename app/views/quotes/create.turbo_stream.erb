@@ -3,3 +3,5 @@
 
 <%# Remove/close form by replacing it with an empty frame %>
 <%= turbo_stream.update Quote.new, "" %>
+
+<%= render_turbo_stream_flash_messages %>
