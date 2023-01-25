@@ -58,7 +58,7 @@ SimpleForm.setup do |config|
     b.use :input, class: 'form__input', error_class: 'form__input--invalid'
     b.use :label, class: 'visually-hidden'
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: :error }
+    # b.use :error, wrap_with: { tag: :span, class: :error }
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
