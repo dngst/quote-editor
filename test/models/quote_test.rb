@@ -1,9 +1,23 @@
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class QuoteTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @quote = quotes(:first)
+  end
+
+  test "valid quote" do
+    assert @quote.valid?
+  end
+
+  test "invalid without name" do
+    @quote.name = nil
+    refute @quote.valid?
+    assert_not_nil @quote.errors[:name]
+  end
+
+  test "invalid without company" do
+    @quote.company = nil
+    refute @quote.valid?
+    assert_not_nil @quote.errors[:company]
+  end
 end
