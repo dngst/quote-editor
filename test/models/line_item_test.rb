@@ -22,4 +22,8 @@ class LineItemTest < ActiveSupport::TestCase
   test "responds to quote" do
     assert_respond_to(@line_item, :quote)
   end
+
+  test "#total_price returns the total price of the line item" do
+    assert_equal 250, line_items(:catering_today).total_price
+  end
 end

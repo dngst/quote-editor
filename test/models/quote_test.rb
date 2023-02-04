@@ -20,4 +20,8 @@ class QuoteTest < ActiveSupport::TestCase
     refute @quote.valid?
     assert_not_nil @quote.errors[:company]
   end
+
+  test "#total_price returns the sum of the total price of all line items" do
+    assert_equal 2500, quotes(:first).total_price
+  end
 end

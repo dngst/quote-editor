@@ -20,6 +20,7 @@ class LineItemSystemTest < ApplicationSystemTestCase
     within "##{dom_id(@line_item_date)}" do
       click_on "Add item", match: :first
     end
+
     assert_selector "h1", text: "First quote"
 
     fill_in "Name", with: "Animation"
@@ -30,6 +31,7 @@ class LineItemSystemTest < ApplicationSystemTestCase
     assert_selector "h1", text: "First quote"
     assert_text "Animation"
     assert_text number_to_currency(1234)
+    assert_text number_to_currency(@quote.total_price)
   end
 
   test "Updating a new line item" do
@@ -38,6 +40,7 @@ class LineItemSystemTest < ApplicationSystemTestCase
     within "##{dom_id(@line_item)}" do
       click_on "Edit"
     end
+
     assert_selector "h1", text: "First quote"
 
     fill_in "Name", with: "Capybara article"
@@ -46,6 +49,7 @@ class LineItemSystemTest < ApplicationSystemTestCase
 
     assert_text "Capybara article"
     assert_text number_to_currency(1234)
+    assert_text number_to_currency(@quote.total_price)
   end
 
   test "Destroying a new line item" do
@@ -60,5 +64,7 @@ class LineItemSystemTest < ApplicationSystemTestCase
     within "##{dom_id(@line_item_date)}" do
       assert_no_text @line_item.name
     end
+
+    assert_text number_to_currency(@quote.total_price)
   end
 end
