@@ -5,23 +5,23 @@ class QuoteTest < ActiveSupport::TestCase
     @quote = quotes(:first)
   end
 
-  test "valid quote" do
+  test 'valid quote' do
     assert @quote.valid?
   end
 
-  test "invalid without name" do
+  test 'invalid without name' do
     @quote.name = nil
-    refute @quote.valid?
+    assert_not @quote.valid?
     assert_not_nil @quote.errors[:name]
   end
 
-  test "invalid without company" do
+  test 'invalid without company' do
     @quote.company = nil
-    refute @quote.valid?
+    assert_not @quote.valid?
     assert_not_nil @quote.errors[:company]
   end
 
-  test "#total_price returns the sum of the total price of all line items" do
+  test '#total_price returns the sum of the total price of all line items' do
     assert_equal 2500, quotes(:first).total_price
   end
 end

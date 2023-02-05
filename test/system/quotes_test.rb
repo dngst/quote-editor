@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'application_system_test_case'
 
 class QuotesTest < ApplicationSystemTestCase
@@ -49,7 +47,7 @@ class QuotesTest < ApplicationSystemTestCase
 
     accept_confirm do
       within id: dom_id(@quote) do
-        click_on "Delete"
+        click_on 'Delete'
       end
     end
 

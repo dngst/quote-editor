@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -65,9 +63,11 @@ group :development do
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "spring"
   gem 'annotate'
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  gem 'spring'
 end
 
 group :test do
@@ -79,4 +79,4 @@ end
 
 gem 'simple_form', '~> 5.1'
 
-gem "devise", "~> 4.8.1"
+gem 'devise', '~> 4.8.1'

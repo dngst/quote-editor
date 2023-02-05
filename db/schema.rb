@@ -41,3 +41,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_064524) do
     t.index ["line_item_date_id"], name: "index_line_items_on_line_item_date_id"
   end
 
+  create_table "quotes", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "company_id", null: false
+    t.index ["company_id"], name: "index_quotes_on_company_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "company_id", null: false
+    t.index ["company_id"], name: "index_users_on_company_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "line_item_dates", "quotes"
+  add_foreign_key "line_items", "line_item_dates"
+  add_foreign_key "quotes", "companies"
+  add_foreign_key "users", "companies"
+end
