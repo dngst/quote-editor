@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="header">
+    <h2>Log in</h2>
+  </div>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, "Email" %>
+      <%= f.input :email, autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, "Password" %>
+      <%= f.input :password %>
+    </div>
+
+    <div class="form-group">
+      <%= f.button :submit, "Log in", class: "btn btn--secondary" %>
+    </div>
+  <% end %>
+</div>
