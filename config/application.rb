@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module QuoteEditor
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+    config.responders.error_status = :unprocessable_entity
+    config.responders.redirect_status = :see_other
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
