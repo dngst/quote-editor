@@ -16,9 +16,7 @@ $ bin/setup
 
 $ bin/dev
 
-$ redis-server
-
-http://localhost:3000
+[localhost:3000](http://localhost:3000)
 
 
 ## Tests
